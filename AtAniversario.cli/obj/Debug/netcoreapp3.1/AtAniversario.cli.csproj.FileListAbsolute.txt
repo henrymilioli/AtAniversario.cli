@@ -1,0 +1,13 @@
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\bin\Debug\netcoreapp3.1\AtAniversario.cli.exe
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\bin\Debug\netcoreapp3.1\AtAniversario.cli.deps.json
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\bin\Debug\netcoreapp3.1\AtAniversario.cli.runtimeconfig.json
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\bin\Debug\netcoreapp3.1\AtAniversario.cli.runtimeconfig.dev.json
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\bin\Debug\netcoreapp3.1\AtAniversario.cli.dll
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\bin\Debug\netcoreapp3.1\AtAniversario.cli.pdb
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.csprojAssemblyReference.cache
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.csproj.CoreCompileInputs.cache
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.AssemblyInfoInputs.cache
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.AssemblyInfo.cs
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.dll
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.pdb
+C:\Users\Jorge\source\repos\AtAniversário\AtAniversario.cli\obj\Debug\netcoreapp3.1\AtAniversario.cli.genruntimeconfig.cache
