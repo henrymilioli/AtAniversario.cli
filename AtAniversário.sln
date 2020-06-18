@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AniversarioAmigos.web", "AniversarioAmigos.web\AniversarioAmigos.web.csproj", "{B88CBEEF-4576-4A06-8492-0257808B2436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtAniversario.cli", "AtAniversario.cli\AtAniversario.cli.csproj", "{C4C87CB7-E03E-46E1-9237-242D74AED493}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B88CBEEF-4576-4A06-8492-0257808B2436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B88CBEEF-4576-4A06-8492-0257808B2436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B88CBEEF-4576-4A06-8492-0257808B2436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B88CBEEF-4576-4A06-8492-0257808B2436}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4C87CB7-E03E-46E1-9237-242D74AED493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4C87CB7-E03E-46E1-9237-242D74AED493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4C87CB7-E03E-46E1-9237-242D74AED493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4C87CB7-E03E-46E1-9237-242D74AED493}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF7696C5-5D5B-4C97-B35B-523823D48FAA}
+	EndGlobalSection
+EndGlobal
