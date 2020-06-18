@@ -41,11 +41,13 @@ namespace AtAniversario.cli
             Console.WriteLine(" #CADASTRO DE AMIGOS# ");
             Console.WriteLine("");
             Console.WriteLine("Selecione uma operação");
-            Console.WriteLine("1 -> Cadastrar amigo");
-            Console.WriteLine("2 -> Consultar amigos cadastrados");
-            Console.WriteLine("3 -> Pesquisar aniversario de amigo pelo nome");
-            Console.WriteLine("4 -> Pesquisar pela data");
-            Console.WriteLine("5 -> Sair");
+            Console.WriteLine("1 -> Cadastrar Amigo");
+            Console.WriteLine("2 -> Consultar Amigos Cadastrados");
+            Console.WriteLine("3 -> Pesquisar Aniversario De Amigo Pelo Nome");
+            Console.WriteLine("4 -> Pesquisar Pela Data");
+            Console.WriteLine("5 -> Excluir Amigo");
+            Console.WriteLine("6 -> Editar Amigo");
+            Console.WriteLine("7 -> Sair");
 
             Console.WriteLine("Informe a opção desejada:");
             char operacao = Console.ReadLine().ToCharArray()[0];
@@ -53,21 +55,27 @@ namespace AtAniversario.cli
             switch (operacao)
             {
                 case '1':
-                    Console.WriteLine("Amigos Cadastrados");
+                    Console.WriteLine(" # Amigos Cadastrados # ");
                     Console.WriteLine("");
                     CadastrarAmigo(); break;
 
                 case '2':
-                    Console.WriteLine("Cadastrar Amigos");
+                    Console.WriteLine(" # Cadastrar Amigos # ");
                     ConsultarAmigo(); break;
                 case '3':
-                    Console.WriteLine("Pesquisar por Nome");
+                    Console.WriteLine(" # Pesquisar por Nome # ");
                     ConsultarAmigoPeloNome(); break;
                 case '4':
-                    Console.WriteLine("Pesquisar por data de Nascimento");
+                    Console.WriteLine(" # Pesquisar por data de Nascimento # ");
                     ConsultarAmigoPelaData(); break;
                 case '5':
-                    Console.WriteLine("Até logo! Obrigado por usar o Gerenciador de Aniversários Tabajara!"); break;
+                    Console.WriteLine(" # Excluir Amigo # ");
+                    ExcluirAmigo(); break;
+                case '6':
+                    Console.WriteLine(" # Editar Amigo # ");
+                    EditarAmigo(); break;
+                case '7':
+                    Console.WriteLine("Até logo! Obrigado por usar o gerenciador de aniversários TABAJARA!!"); break;
                 default:
                     Console.WriteLine("Opção Inválida,tente novamente!");
                     Console.WriteLine(" ");
@@ -78,7 +86,7 @@ namespace AtAniversario.cli
         {
             Console.Clear();
 
-            Console.WriteLine("Cadastrando Aniversario de Amigo");
+            Console.WriteLine(" # Cadastro de Amigo #");
             Console.WriteLine("");
             Console.WriteLine("Digite o Nome:");
             string nome = Console.ReadLine();
@@ -225,7 +233,124 @@ namespace AtAniversario.cli
             Console.Clear();
             MainMenu();
         }
+        public static void ExcluirAmigo()
+        {
+            Console.WriteLine("Entre com o nome do amigo que deseja excluir:");
+            Console.WriteLine("");
+            string nome = Console.ReadLine();
 
+            var amigosEncontrados = Repositorio.BuscarTodosOsAmigos(nome);
+
+            int qtdamigosEncontrados = amigosEncontrados.Count();
+
+            if (qtdamigosEncontrados > 0)
+            {
+                Console.WriteLine("Amigos Encontradas:");
+                Console.WriteLine("");
+                foreach (var amigo in amigosEncontrados)
+                {
+                    Console.WriteLine($"{amigo.Nome} {amigo.Sobrenome}");
+                    Console.WriteLine($"Idade: {(DateTime.Now - amigo.DataDeNascimento).Days / 30 / 12 - 1}");
+                    Console.WriteLine($"Data de Nascimento: {amigo.DataDeNascimento:dd/MM/yyyy}");
+                    Console.WriteLine($"Data de Cadastro: {amigo.DataDeCadastro:dd/MM/yyyy}");
+                    Console.WriteLine("");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nenhum amigo encontrado!!");
+                Console.WriteLine("");
+                ExcluirAmigo();
+            }
+
+            Console.WriteLine("Para continuar digite o SOBRENOME do amigo que deseja excluir!");
+            string sobrenome2 = Console.ReadLine();
+
+            foreach (var amigo in amigosEncontrados)
+            {
+                if (amigo.Sobrenome == sobrenome2)
+                {
+                    Repositorio.Excluir(amigo.Nome);
+                }
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("Pressione Qualquer tecla para continuar...");
+            Console.ReadKey();
+            Console.Clear();            
+            MainMenu();
+        }
+        public static void EditarAmigo()
+        {
+            Console.WriteLine("Digite com o nome do amigo que deseja editar:");
+            Console.WriteLine("");
+            string nome = Console.ReadLine();
+
+            var amigosEncontrados = Repositorio.BuscarTodosOsAmigos(nome);
+
+            int qtdamigosEncontrados = amigosEncontrados.Count();
+
+            if (qtdamigosEncontrados > 0)
+            {
+                Console.WriteLine("Amigos Encontrados:");
+                Console.WriteLine("");
+                foreach (var amigo in amigosEncontrados)
+                {
+                    Console.WriteLine($"{amigo.Nome} {amigo.Sobrenome}");
+                    Console.WriteLine($"Idade: {(DateTime.Now - amigo.DataDeNascimento).Days / 30 / 12 - 1}");
+                    Console.WriteLine($"Data de Nascimento: {amigo.DataDeNascimento:dd/MM/yyyy}");
+                    Console.WriteLine($"Data de Cadastro: {amigo.DataDeCadastro:dd/MM/yyyy}");
+                    Console.WriteLine("");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Nenhum amigo encontrado!!");
+                Console.WriteLine("");
+                EditarAmigo();
+            }
+
+            Console.WriteLine("Para continuar, digite novamente o SOBRENOME do amigo que deseja Editar!");
+            string escolha2 = Console.ReadLine();
+
+            foreach (var amigo in amigosEncontrados)
+            {
+                if (amigo.Sobrenome == escolha2)
+                {
+                    Repositorio.Excluir(amigo.Nome);
+
+                }
+                else
+                {
+                    Console.WriteLine("Nenhum amigo encontrado com esse SOBRENOME!!");
+                    Console.WriteLine("");
+                    EditarAmigo();
+                }
+            }
+
+            Console.WriteLine(" # Cadastrando Amigo # ");
+            Console.WriteLine("");
+            Console.WriteLine("Digite o Nome:");
+            string newNome = Console.ReadLine();
+            Console.WriteLine("Digite o Sobrenome:");
+            string newSobrenome = Console.ReadLine();
+            Console.WriteLine("Digite a data do aniversario (DD/MM/YYYY)");
+            DateTime newDataNascimento = DateTime.Parse(Console.ReadLine());
+
+            Amigo amigo1 = new Amigo();
+            amigo1.Nome = newNome;
+            amigo1.Sobrenome = newSobrenome;
+            amigo1.DataDeNascimento = newDataNascimento;
+            amigo1.DataDeCadastro = DateTime.Now;
+
+            Repositorio.CadastrarAmigo(amigo1);
+            Console.WriteLine("");
+            Console.WriteLine("Pressione Qualquer tecla para continuar...");
+            Console.ReadKey();
+            Console.Clear();            
+            MainMenu();
+
+        }
 
     }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -81,6 +80,39 @@ namespace AtAniversario.cli
                     where x.DataDeNascimento == dataNascimento
                     orderby x.Nome
                     select x);
+        }
+        public static void Excluir(string nome)
+        {
+            var todosOsAmigos = BuscarTodosOsAmigos();
+            List<Amigo> amigosUpdate = new List<Amigo>();
+            foreach (var amigo in todosOsAmigos)
+            {
+                if (nome != amigo.Nome)
+                {
+                    amigosUpdate.Add(amigo);
+                }
+                else
+                {
+                }
+            }
+            RecriarArquivo(amigosUpdate);
+
+        }
+        public static void RecriarArquivo(List<Amigo> amigosUpdate)
+        {
+            string nomeDoArquivo = ObterNomeArquivo();
+            File.Delete(ObterNomeArquivo());
+            FileStream arquivo;
+            if (!File.Exists(nomeDoArquivo))
+            {
+                arquivo = File.Create(nomeDoArquivo);
+                arquivo.Close();
+            }
+            foreach (var amigo in amigosUpdate)
+            {
+                CadastrarAmigo(amigo);
+            }
+
         }
 
     }
